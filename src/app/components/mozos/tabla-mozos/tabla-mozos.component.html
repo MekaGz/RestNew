@@ -1,0 +1,36 @@
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Fecha de nacimiento</th>
+        <th>Estado</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of listaMozos; track $index) {
+        <tr>
+          <td>{{item.nombres}}</td>
+          <td>{{item.apellidos}}</td>
+          <td>{{item.dni}}</td>
+          <td>{{item.fecha_nac}}</td>
+          <td>{{item.activo}}</td>
+          <td class="text-center">
+              <button class="btn btn-warning" (click)="seleccionarMozo(item)">
+                <i class="fa-solid fa-pen-to-square"></i> Editar
+              </button>
+          </td>
+          <td class="text-center">
+              <button class="btn btn-danger" (click)="eliminarMozo(item.id)">
+                <i class="fa-solid fa-trash-can"></i> Eliminar
+              </button>
+          </td>
+
+        </tr>
+      }
+    </tbody>
+  </table>
+  

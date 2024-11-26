@@ -1,2 +1,8 @@
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<a href="#" (click)="mostrarOcultar()">{{mensaje_enlace}}</a>
+<div *ngIf="mostrarMenu">
+    <app-menu></app-menu>
+  </div>
+  
+  <div *ngIf="!mostrarMenu">
+    <app-mozos></app-mozos>
+  </div>

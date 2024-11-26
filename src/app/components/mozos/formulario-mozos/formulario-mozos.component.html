@@ -1,0 +1,37 @@
+<form (ngSubmit)="enviarMozo()">
+    <div class="row">
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Nombres:</label>
+        <input type="text" class="form-control" placeholder="Ingrese nombres" name="nombre" [(ngModel)]="mozo.nombres">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Apellidos:</label>
+        <input type="text" class="form-control" placeholder="Ingrese Apellidos" name="apellido" [(ngModel)]="mozo.apellidos">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">DNI:</label>
+        <input type="text" class="form-control" placeholder="Ingrese correo" name="correo" [(ngModel)]="mozo.dni">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="text" class="form-control" placeholder="Ingrese username" name="username" [(ngModel)]="mozo.fecha_nac">
+      </div>
+  
+      <div class="row">
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-secondary m-2" (click)="limpiarFormularioMozo()">
+            <i class="fa-solid fa-broom"></i> Limpiar formulario
+          </button>
+          <button type="submit" class="btn btn-success">
+            <i class="fa-regular fa-floppy-disk"></i> Guardar Mozo
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  </form>
+  

@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div class="card">
+      <div class="card-header">
+          <h3>Registrar Mozos</h3>
+      </div>
+      <div class="card-body">
+        <app-formulario-mozos (mozoEnvia)="agregarMozo($event)" [mozo]="mozoSeleccionado"></app-formulario-mozos>
+      </div>
+    </div>
+    <div class="card my-4">
+      <div class="card-header">
+        <h3>Lista de mozos</h3>
+      </div>
+      <div class="card-body">
+        <app-tabla-mozos [listaMozos]="listaMozo"
+        
+        (idMozoEnvia)="eliminarMozo($event)"
+        (editarMozoEnvia)="seleccionarMozo($event)">>
+        </app-tabla-mozos>
+    </div>
+    </div>
+  </div>
+  
