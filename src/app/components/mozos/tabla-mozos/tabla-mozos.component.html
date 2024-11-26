@@ -17,7 +17,12 @@
           <td>{{item.apellidos}}</td>
           <td>{{item.dni}}</td>
           <td>{{item.fecha_nac}}</td>
-          <td>{{item.activo}}</td>
+          <td>
+      <button class="btn"
+        [ngClass]="item.activo ? 'btn-success' : 'btn-danger'" 
+        (click)="toggleActivo(item)" (click)="seleccionarMozo(item)" >
+        {{ item.activo ? 'Activo' : 'Inactivo' }}
+      </button></td>
           <td class="text-center">
               <button class="btn btn-warning" (click)="seleccionarMozo(item)">
                 <i class="fa-solid fa-pen-to-square"></i> Editar

@@ -18,7 +18,7 @@
   
       <div class="col-md-6 mb-3">
         <label for="">Fecha de Nacimiento:</label>
-        <input type="text" class="form-control" placeholder="Ingrese username" name="username" [(ngModel)]="mozo.fecha_nac">
+        <input type="text" class="form-control" placeholder="Ingrese fecha (YYYY-MM-DD)" name="username" [(ngModel)]="mozo.fecha_nac">
       </div>
   
       <div class="row">
@@ -27,7 +27,7 @@
             <i class="fa-solid fa-broom"></i> Limpiar formulario
           </button>
           <button type="submit" class="btn btn-success">
-            <i class="fa-regular fa-floppy-disk"></i> Guardar Mozo
+            <i class="fa-regular fa-floppy-disk"></i>{{(mozo.id>0) ? 'Actualizar Mozo' : 'Guardar Mozo' }}
           </button>
         </div>
       </div>

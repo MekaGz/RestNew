@@ -1,0 +1,48 @@
+<form (ngSubmit)="enviarPlato()">
+    <div class="row">
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Nombre:</label>
+        <input type="text" class="form-control" placeholder="Ingrese nombre" name="nombre" [(ngModel)]="plato.nombre">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Precio:</label>
+        <input type="text" class="form-control" placeholder="Ingrese Precio" name="precio" [(ngModel)]="plato.precio">
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Dia:</label>
+        <select class="form-control" name="dias" [(ngModel)]="plato.dia">
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+            <option value="Sábado">Sábado</option>
+        </select>
+      </div>
+  
+      <div class="col-md-6 mb-3">
+        <label for="">Tipo:</label>
+        <select placeholder="Seleccione Tipo" class="form-control" name="tipo" [(ngModel)]="plato.tipo">
+            <option value="Entrada">Entrada</option>
+            <option value="Fondo">Fondo</option>
+            <option value="Postre">Postre</option>
+          </select>
+      </div>
+  
+      <div class="row">
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-secondary m-2" (click)="limpiarFormularioPlato()">
+            <i class="fa-solid fa-broom"></i> Limpiar formulario
+          </button>
+          <button type="submit" class="btn btn-success">
+            <i class="fa-regular fa-floppy-disk"></i>{{(plato.id>0) ? 'Actualizar Platillo' : 'Guardar Platillo' }}
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  </form>
+  

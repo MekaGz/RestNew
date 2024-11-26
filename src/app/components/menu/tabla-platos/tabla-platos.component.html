@@ -1,0 +1,41 @@
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Dia</th>
+        <th>Tipo</th>
+        <th>Estado</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of listaPlatos; track $index) {
+        <tr>
+          <td>{{item.nombre}}</td>
+          <td>{{item.precio}}</td>
+          <td>{{item.dia}}</td>
+          <td>{{item.tipo}}</td>
+          <td>
+            <button class="btn"
+                [ngClass]="item.activo ? 'btn-success' : 'btn-danger'" 
+                (click)="toggleActivo(item)" (click)="seleccionarPlato(item)" >
+                {{ item.activo ? 'Activo' : 'Inactivo' }}
+            </button></td>
+          <td class="text-center">
+              <button class="btn btn-warning" (click)="seleccionarPlato(item)">
+                <i class="fa-solid fa-pen-to-square"></i> Editar
+              </button>
+          </td>
+          <td class="text-center">
+              <button class="btn btn-danger" (click)="eliminarPlato(item.id)">
+                <i class="fa-solid fa-trash-can"></i> Eliminar
+              </button>
+          </td>
+
+        </tr>
+      }
+    </tbody>
+  </table>
+  

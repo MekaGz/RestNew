@@ -26,21 +26,17 @@ export class PrincipalMozosComponent implements OnInit{
   }
 
   agregarMozo(mozo:Mozo){
-    this.mozoServicio.registrarMozos(mozo).subscribe(mozoNuevo =>{this.listaMozo=[...this.listaMozo,{...mozoNuevo}]})
     if(mozo.id > 0){
       //modificar
       this.mozoServicio.actualizarMozo(mozo).subscribe(mozoActualizado =>{
         this.listaMozo = this.listaMozo.map(
           item => (item.id == mozoActualizado.id) ? {...mozoActualizado} :item)
       })
-      /*this.listaUsuarios = this.listaUsuarios.map(
-          item => (item.id == usuario.id) ? {...usuario} : item)*/
     }else{
       //nuevo
       this.mozoServicio.registrarMozos(mozo).subscribe(mozoNuevo =>{
         this.listaMozo = [...this.listaMozo, {...mozoNuevo}]
       })
-      //this.listaUsuarios = [...this.listaUsuarios, {...usuario}]
     }
   }
 
@@ -53,4 +49,5 @@ export class PrincipalMozosComponent implements OnInit{
       this.listaMozo = this.listaMozo.filter(item => item.id != id)
     })
   }
+  
 }
